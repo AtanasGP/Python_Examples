@@ -1,0 +1,262 @@
+######################################################
+# 0, 1, 2, 3, 4, 5, 6,  7
+# 1, 1, 2, 3, 5, 8, 13, 21
+# fib(3) -> 3 + fib(2) -> 3 + 2 + fib(1) ->  3 + 2 + 1
+
+def fib(number: int):
+    if number==1 or number==0:
+        return 1
+    print("fib("+str(number-1) + ") + fib("+str(number-2) + ")")
+    return fib(number-1) + fib(number-2)
+
+
+
+
+
+a = fib(5)
+print(a)
+
+######################################################
+# tmp = 3
+# arr[j] = 5
+# arr[i] = tmp(3)   
+#         
+# i = 0 
+#  num:  2, 5, 5, 7, 4, 7, 19, 3, 3, 12,
+# i = 1
+#  num:  2, 5, 5, 7, 4, 7, 19, 3, 3, 12
+#  num:  2, 3, 5, 7, 5, 7, 19, 4, 3, 12 
+# i = 2
+#  num:  2, 3, 5, 7, 5, 7, 19, 4, 3, 12 
+#  num:  2, 3, 3, 7, 5, 7, 19, 5, 4, 12 
+# i = 3
+#  num:  2, 3, 5, 7, 5, 7, 19, 4, 3, 12 
+#  num:  2, 3, 3, 4, 7, 7, 19, 5, 5, 12 
+
+#  ind:  0, 1, 2, 3, 4, 5,  6, 7, 8,  9
+#  i = 0, j=1; i=0, j=2; i=0, j=3; i=0, j=4 ... i=0, j=9
+#  i = 1, j=2
+
+def sort(arr: list):
+    for i in range(0, len(arr)):
+        for j in range(i+1, len(arr)):
+            # print("i:" + str(i) + " j:" + str(j))
+            if(arr[j]>arr[i]):
+                tmp = arr[j]
+                arr[j] = arr[i]
+                arr[i] = tmp
+        # i = i + 1
+    return arr
+
+unsorted_arr = [5,3,5,7,4,7,19,3,2,12, 13, 156346346]
+# print(unsorted_arr[2])
+# print(unsorted_arr[9])
+
+sorted_arr = sort(unsorted_arr)
+# print(sorted_arr)
+
+
+######################################################
+
+# da se transformira ot string s dumi v chisla 
+def myf(x):
+    mapping={
+        "one":1,
+        "two":2,
+        "three":3,
+        "four":4, 
+        "five":5,
+        "six":6,
+        "seven":7,
+        "eight":8,
+        "nine":9         
+        }
+    for key in mapping:
+        x=x.replace(key, str (mapping[key]))
+    print(x)
+myf("one three nine eight")
+
+
+######################################################
+
+
+# da se vuvede n i m koito sa chisla 
+# iska se kato se napishe n da e sus stoinosrt na novi redove, m sa koloni
+#da se printirat *
+
+n=int(input("enter number for rows:"))
+m=int(input("enter number for collums:"))
+for i in range (0, n):
+    s=str()
+    for j in range(0,m):
+        s+="*"
+    print(s)
+
+
+######################################################
+
+
+
+"""
+Write a function in Python that accepts a credit card number. 
+It should return a string where all the characters are 
+hidden with an asterisk except the last four. 
+For example, if the function gets sent "4444444444444444", 
+then it should return "4444".
+"""
+def cardNumberHider():
+    str = input("Enter the card number: ")[:16] 
+    masked = len(str) - 4
+    slimstr = str[masked:]
+    print("Your masked card number is: ", end="")
+    print("*" * masked + slimstr)
+cardNumberHider()
+
+
+######################################################
+
+
+
+
+"""
+Create a function in Python that accepts two parameters. 
+The first should be the full price of an item as an integer. 
+The second should be the discount percentage as an integer.
+
+The function should return the price of the item after the discount has been applied. 
+For example, if the price is 100 and the discount is 20, the function should return 80. 
+"""
+
+def price ():
+    full_price=int(input("First item:"))
+    discount=full_price*0.2
+    sec_item=full_price-discount
+    print("discount is:",discount)
+    print(full_price)
+    print(sec_item)
+    
+price()
+
+
+
+######################################################
+
+
+
+#random number gen 
+
+import random 
+def random_number():
+  
+    x = random.randint(1,100)
+    print(x)    
+
+i=random_number()
+        
+
+
+######################################################
+
+
+
+import random
+
+mylist = []
+
+for i in range(1,100):
+    x = random.randint(1,10)
+    mylist.append(x)
+
+print(mylist)
+
+
+
+######################################################
+
+
+
+def double_letters(letters):
+    for letter in range(len(letters)-1):
+        if letters[letter] == letters[letter+1]:
+            return True
+    return False
+
+print(double_letters("letters"))
+
+
+######################################################
+
+
+
+def add_dots(string):
+    new_string = ".".join(string)
+    return new_string
+
+print(add_dots("test"))
+
+
+
+######################################################
+
+
+"""Create a function in Python that accepts 
+a single word and returns the number of vowels in that word.
+ In this function, only a, e, i, o, and u will be counted as vowels — not y
+ """
+ 
+ 
+def vowel_count(string):
+    
+    string = string.lower()
+    count = 0
+    vowel_found = False 
+    
+    for char in string:
+        if char in 'aeiou': 
+            count += 1
+            vowel_found = True
+            
+    if vowel_found == False:
+        print("There are no vowels in the string: {string}")
+            
+    return count
+
+string = str(input("Enter your word:"))
+
+result = vowel_count(string) 
+
+print("No of vowels are: ", result)
+
+
+
+######################################################
+
+
+
+
+
+"""
+Given a decimal number as input, 
+the task is to write a Python program to convert the given decimal number 
+into an equivalent binary number.
+"""
+
+# Function to convert decimal number
+# to binary using recursion
+def DecimalToBinary(num):
+     
+    if num >= 1:
+        DecimalToBinary(num // 2)
+    print(num % 2, end = '')
+ 
+
+if __name__ == '__main__':
+     
+    
+    dec_val = int(input("Enter number:"))
+     
+    
+    DecimalToBinary(dec_val)
+
+
+
