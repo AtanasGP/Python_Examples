@@ -1,4 +1,5 @@
 ######################################################
+#Fibonacci sequence
 # 0, 1, 2, 3, 4, 5, 6,  7
 # 1, 1, 2, 3, 5, 8, 13, 21
 # fib(3) -> 3 + fib(2) -> 3 + 2 + fib(1) ->  3 + 2 + 1
@@ -37,6 +38,8 @@ print(a)
 #  i = 0, j=1; i=0, j=2; i=0, j=3; i=0, j=4 ... i=0, j=9
 #  i = 1, j=2
 
+#sort example
+
 def sort(arr: list):
     for i in range(0, len(arr)):
         for j in range(i+1, len(arr)):
@@ -58,7 +61,7 @@ sorted_arr = sort(unsorted_arr)
 
 ######################################################
 
-# da se transformira ot string s dumi v chisla 
+# from str with words to str with numbers
 def myf(x):
     mapping={
         "one":1,
@@ -80,9 +83,9 @@ myf("one three nine eight")
 ######################################################
 
 
-# da se vuvede n i m koito sa chisla 
-# iska se kato se napishe n da e sus stoinosrt na novi redove, m sa koloni
-#da se printirat *
+# enter int n & m 
+# n rows, m collums
+# print for every n and m *
 
 n=int(input("enter number for rows:"))
 m=int(input("enter number for collums:"))
@@ -173,7 +176,7 @@ print(mylist)
 
 ######################################################
 
-
+#check for double letters 
 
 def double_letters(letters):
     for letter in range(len(letters)-1):
@@ -187,7 +190,7 @@ print(double_letters("letters"))
 ######################################################
 
 
-
+# add dots to given word 
 def add_dots(string):
     new_string = ".".join(string)
     return new_string
