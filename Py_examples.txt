@@ -190,7 +190,7 @@ print(double_letters("letters"))
 ######################################################
 
 
-# add dots to given word 
+# add dots to word "test" 
 def add_dots(string):
     new_string = ".".join(string)
     return new_string
